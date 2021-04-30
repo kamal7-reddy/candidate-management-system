@@ -1,0 +1,8 @@
+CMS/
+build/
+HRM/__pycache__/
+HRM/.vs/
+HRM/Scripts/
+HRM/Lib/
+*.log
+*.pyc

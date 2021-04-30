@@ -1,0 +1,113 @@
+{%  extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+<div style="border-bottom:1px solid #000;"> 
+<div align="left"><h1>Candidate Information</h1></div>
+</div>
+</br>
+<div class="container-fluid">
+  <div align="left"><h3>Personal Information</h3></div>
+    <div class="row">
+	  <div class="col-lg-6">
+         <label>  Name &emsp;&emsp;&emsp;{{form.full_name}}</label> 
+	  </div>
+      <div class="col-lg-6">
+         <label>Email ID &emsp;&emsp;&emsp;{{form.email_id}}</label>        
+      </div>
+    </div>
+    <div class="row">
+	  <div class="col-lg-6">
+         <label>  Gender &emsp;&emsp;&emsp;{{form.gender}}</label> 
+	  </div>
+      <div class="col-lg-6">
+         <label>Phone No &emsp;&emsp;&emsp;{{form.phone_no}}</label>        
+      </div>
+    </div>
+     <div class="row">
+	  <div class="col-lg-6">
+         <label>  DOB  &emsp; &emsp;&emsp;{{form.date_of_birth}}</label> 
+	  </div>
+      <div class="col-lg-6">
+         <label> Alternate No &emsp;&emsp;&emsp;{{form.alternate_no}}</label>        
+      </div>
+    </div>
+ <div align="left"><h3>JOB Information</h3></div>
+    <div class="row">
+	  <div class="col-lg-6">
+         <label>  Job Position &emsp;&emsp;&emsp;{{form.job_position}}</label> 
+	  </div>
+      <div class="col-lg-6">
+         <label> Year Of Exp&emsp;&emsp;&emsp;{{form.year_of_exp}}</label>        
+      </div>
+    </div>
+    <div class="row">
+	  <div class="col-lg-6">
+         <label>  Current CTC &emsp;&emsp;&emsp;{{form.current_ctc}}</label> 
+	  </div>
+      <div class="col-lg-6">
+         <label>Skill Set &emsp;&emsp;&emsp;{{form.skill_set}}</label>        
+      </div>
+    </div>
+     <div class="row">
+	  <div class="col-lg-6">
+         <label>  Expected CTC  &emsp; &emsp;&emsp;{{form.expected_ctc}}</label> 
+	  </div>
+      <div class="col-lg-6">
+        <label>Current Company  &emsp; &emsp;&emsp;{{form.current_company}}</label>
+    </div>
+    </div>
+</div>
+
+ <div align="left"><h3>Location</h3></div>
+
+     <div class="row">
+	      <div class="col-lg-6">
+             <label> Work Location &emsp;&emsp;&emsp;{{form.work_Location}}</label> 
+	      </div>
+          <div class="col-lg-6">
+             <label>Preferred Location &emsp;&emsp;&emsp;{{form.preferred_location}}</label>        
+          </div>
+      </div>
+ <div align="left"><h3>Notice Period</h3></div>
+
+     <div class="row">
+	      <div class="col-lg-6">
+             <label> Negotiable &emsp;&emsp;&emsp;{{form.negotiable}}</label> 
+	      </div>
+          <div class="col-lg-6">
+             <label> Currently Serving &emsp;&emsp;&emsp;{{form.currently_serving}}</label>        
+          </div>
+      </div>
+    <div class="row">
+	      <div class="col-lg-6">
+             <label> Notice Period &emsp;&emsp;&emsp;{{form.in_days}}</label> 
+	      </div>
+    </div>
+    </br></br></br>
+
+    
+     <div class="row">
+	      <div class="col-lg-6">
+             <label> Reason For Job Change &emsp;&emsp;{{form.reason_for_job_change}}</label> 
+	      </div>
+         <div class= "col-lg-6">
+            <label>Status Of Application     &emsp;&emsp;{{form.status}}</label>       
+         </div>
+    <!--      <div class="col-lg-6">
+          <a href="{{form.document.url}}" download ="{{form.document.url}}"><h3>resume download<h3></a>             
+          </div>-->
+     </div>
+
+    
+       <a class="btn btn-sm btn-info" href="{% url 'home'%}">OK</a>
+
+
+    </form>
+
+{% endblock %}
+
+
+

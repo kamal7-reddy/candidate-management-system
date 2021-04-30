@@ -1,0 +1,410 @@
+{%  extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registeration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>-->
+
+<form class="form-horizontal" action = 'employee' method = 'post' enctype = 'multipart/form-data'>
+
+     {% csrf_token %}
+
+
+<div align="left"><h1>Fill Candidate Information</h1></div>
+</div>
+</br>
+
+
+
+  <div align="left"><h3>Personal Information</h3></div>
+
+    <div class="row">
+
+	  <div class="col-lg-6">
+         <label for="full_name" class="control-label col-xs-2">Name</label> 
+           <div class="col-xs-8">
+             <input id="full_name" name="full_name" placeholder="FULL NAME" type="text" required="required" class="form-control">
+           </div>
+ 
+
+	  </div>
+      <div class="col-lg-6">
+        <label for="email_id" class="control-label col-xs-2">Email ID</label> 
+          <div class="col-xs-8">
+            <input id="email_id" name="email_id" placeholder="example@gmail.com" type="email" required="required" class="form-control">
+          </div>
+       </div>
+	</div>
+    </br>
+    <div class="row">
+      <div class="col-lg-6">
+    
+        <label for="gender" class="control-label col-xs-2">Gender</label> 
+        <div class="col-xs-8">
+          
+         <label class="radio-inline">
+            <input type="radio" id="female" name="gender" value="female">
+                  Female
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="male" name="gender" value="male"checked>
+                  Male
+          </label>
+          <label class="radio-inline">
+            <input type="radio"  id="other"  name="gender" value="others">
+                  Others
+          </label>
+          
+       
+        </div>
+        
+      </div>
+  	  <div class="col-lg-6">
+        <label for="text2" class="control-label col-xs-2">Phone No</label> 
+            <div class="col-xs-8">
+              <input id="phone_no" name="phone_no"  placeholder="988*******" type="tel"pattern="[0-9]{10}" required="required" class="form-control">
+            </div>
+      </div>
+      </br></br>
+   </div>
+    <div class="row">
+          <div class="col-lg-6">
+                <label for="date_of_birth" class="control-label col-xs-2"> DOB</label> 
+                    <div class="col-xs-6">
+                      <input id="date_of_birth" name="date_of_birth" placeholder="DD-MM-YYYY" type="date" required="required" class="form-control">
+                    </div>
+           </div>
+          </br>     
+          <div class="col-lg-6">
+                <label for="alternate_no" class="control-label col-xs-2">Alternate No</label> 
+                    <div class="col-xs-6">
+                      <input id="alternate_no" name="alternate_no" placeholder="988*******" type="tel"pattern="[0-9]{10}" required="required" class="form-control">
+                    </div>
+          </div>
+    </div>
+
+
+
+  <div align="left"><h3>JOB Information</h3></div>
+  </br>
+
+    <div class="row">
+          <div class="col-lg-6">
+                  <label for="job_position" class="control-label col-xs-2">Job Position</label> 
+                      <div class="col-xs-6">
+                        <input id="job_position" name="job_position" placeholder="ex software developer" type="text" class="form-control">
+                      </div>
+          </div>
+          <div class = "co-lg-6">
+                <label for="year_of_exp" class="control-label col-xs-2">Year of Experience</label> 
+                    <div class="col-xs-10">
+                      <input id="year_of_exp" name="year_of_exp" placeholder="00" type="number" required="required" class="form-control">
+                    </div>
+           </div>
+    </div>
+
+    <div class = "row">
+         <div class = "col-lg-6">
+              <label for="current_ctc" class="control-label col-xs-2">Current CTC</label> 
+                <div class="col-xs-8">
+                  <input id="current_ctc" name="current_ctc" type="number" required="required" class="form-control">
+                 </div>  
+         </div>
+
+         <div class = "col-lg-6">
+            <label for="skill_set" class="control-label col-xs-2">Skill set</label> 
+            <div class="col-xs-8">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="python">
+                          Python
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="c/c++">
+                          C/C++
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="java">
+                          Java
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="html">
+                          HTML
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="js">
+                          Js
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="embedded c">
+                          Embedded C
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="sql">
+                          Sql
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="php">
+                         PHP 
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="skill_set[]" value="restapi">
+                          Restful API
+                  </label>
+            </div>
+         </dv>
+    </div>
+    </br>
+    </br>
+     </br> </br>
+    <div class = "row">
+         <div class = "col-lg-6">
+                <label for="expected_ctc" class="control-label col-xs-2"> &nbspExpected CTC</label> 
+                     <div class="col-xs-4">
+                       <input id="expected_ctc" name="expected_ctc" type="number" required="required" class="form-control">
+                    </div>
+          </div>
+          <div class = "col-lg-6">
+               <label for="current_company" class="control-label col-xs-2">Current Company</label> 
+                     <div class="col-xs-8">
+                       <input id="current_company" name="current_company" type="text" required="required" class="form-control">
+                    </div>
+          </div>
+
+    </br>
+    </br>
+    <div class="container-fluid">
+
+  <div align="left"><h3> &emsp;Location</h3></div>
+    <div class = "row">
+             <div class = "col-lg-6">
+                   <label for="work_Location" class="control-label col-xs-2"> &emsp;Work Location</label> 
+                        <div class="col-xs-8">
+                          <input id="work_Location" name="work_Location" placeholder="Ex: bengulur" type="text" required="required" class="form-control">
+                        </div>
+              </div>
+              <div class = "col-lg-6">
+                   <label for="preferred_location" class="control-label col-xs-2">Preferred Location</label> 
+                        <div class="col-xs-8">
+                              <select id="preferred_location" name="preferred_location" required="required" class="select form-control">
+                                <option value="any">Any</option>
+                                <option value="chennai">Chennai</option>
+                                 <option value="pune">Pune</option>
+                                <option value="bangulur">Bangulur</option>
+                              </select>
+                        </div>
+               </div>
+     </div>
+  <div class="container-fluid">
+   <div align="left"><h3>Notice Period</h3></div>
+     <div class = "row">
+      <div class = "col-lg-5">
+       <label for="negotiable" class="control-label col-xs-2">Negotiable</label> 
+        <div class="col-xs-6">
+          <select id="negotiable" name="negotiable" required="required" class="select form-control">
+            <option value="yes">YES</option>
+            <option value="no">NO</option>
+            <option value="maybe">MAYBE</option>
+          </select>
+        </div>
+       </div>
+      <div class = "col-lg-5">
+       <label for="currently_serving " class="control-label col-xs-2">Currently Serving </label> 
+        <div class="col-xs-6">
+          <select id="currently_serving" name="currently_serving" required="required" class="select form-control">
+            <option value="yes">YES</option>
+            <option value="no">NO</option>
+          </select>
+        </div>
+       </div>
+      <div class = "col-lg-5">
+       <label for="in_days" class="control-label col-xs-2">In days</label> 
+        <div class="col-xs-6">
+           <input id="in_days" name="in_days" placeholder="In days Only" type="text" required="required" class="form-control">
+        </div>
+       </div>
+       </div>
+       </br>
+       </br>
+       </br>
+<div class = 'row'>
+  <div class="col-lg-6">
+    <label for="reason_for_job_change" class="control-label col-xs-2"><b>Reason for Job Change</b></label> 
+      <div class="col-xs-8">
+        <input id="reason_for_job_change" name="reason_for_job_change" type="text" required="required" class="form-control">
+      </div>
+    </div>
+      <div class = "col-lg-5">
+       <label for="status" class="control-label col-xs-2">Status</label> 
+        <div class="col-xs-6">
+          <select id="status" name="status" required="required" class="select form-control">
+            <option value="processing">Processing</option>
+            <option value="shortlisted">Shortlisted</option>
+            <option value="selected">Selected</option>
+          </select>
+        </div>
+       </div>
+    </div>
+    
+
+
+
+  <div class="col-lg-6">
+    <label for="upolad_resume" class="control-label col-xs-2">Upolad Resume</label> 
+      <div class="col-xs-6">
+        <input id="upolad_resume" name="upolad_resume" type="file" required="required" class="form-control">
+      </div>l
+    </div>
+    </div>
+  <div class="co-lg-6">
+    <div class="col-xs-offset-5 col-xs-5">
+      <button style="height:40px;width:150px;" name="submit" type="submit" class="btn btn-primary" onclick=" checkButton()">Submit</button>
+      <h4 id="error" style= "color:red"> </h4>
+    </div>
+  </div>
+
+
+    </br>
+    {% endblock %}
+
+    <!--
+    </body>
+ 
+
+</html> 
+
+
+    <!--
+<form class="form-horizontal" action = 'employee' method = 'post'>
+
+     {% csrf_token %}
+<div class="container-fluid">
+<div class = 'row'>
+  <div class="form-group">
+    <label for="full_name" class="control-label col-xs-2">Name</label> 
+    <div class="col-xs-3">
+      <input id="full_name" name="full_name" placeholder="FULL NAME" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="gender" class="control-label col-xs-2">Gender</label> 
+    <div class="col-xs-3">
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="female">
+              Female
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="male">
+              Male
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="others">
+              Others
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email_id" class="control-label col-xs-2">Email ID</label> 
+    <div class="col-xs-3">
+      <input id="email_id" name="email_id" placeholder="example@gmail.com" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="text2" class="control-label col-xs-2">Phone No</label> 
+    <div class="col-xs-8">
+      <input id="phone_no" name="phone_no" placeholder="91*******" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="year_of_exp" class="control-label col-xs-2">Year of Experience</label> 
+    <div class="col-xs-8">
+      <input id="year_of_exp" name="year_of_exp" placeholder="00" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="date_of_birth" class="control-label col-xs-2">Date of birth</label> 
+    <div class="col-xs-8">
+      <input id="date_of_birth" name="date_of_birth" placeholder="DD-MM-YYYY" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="job_position" class="control-label col-xs-2">Job Position</label> 
+    <div class="col-xs-8">
+      <input id="job_position" name="job_position" placeholder="ex software developer" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="annual_ctc" class="control-label col-xs-2">Annual CTC</label> 
+    <div class="col-xs-8">
+      <input id="annual_ctc" name="annual_ctc" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="skill_set" class="control-label col-xs-2">Skill set</label> 
+    <div class="col-xs-2">
+      <label class="checkbox-inline">
+        <input type="checkbox" name="skill_set" value="python">
+              Python
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="skill_set" value="c/c++">
+              C/C++
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="skill_set" value="java">
+              Java
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="skill_set" value="html">
+              HTML
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="skill_set" value="js">
+              Js
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="skill_set" value="embedded c">
+              Embedded C
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="preferred_location" class="control-label col-xs-2">Preferred Location</label> 
+    <div class="col-xs-8">
+      <select id="preferred_location" name="preferred_location" required="required" class="select form-control">
+        <option value="chennai">Chennai</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="pune">Pune</option>
+        <option value="bangulur">Bangulur</option>
+        <option value="ahmadabad">Ahmadabad</option>
+        <option value="noida">Noida</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="any">Any</option>
+      </select>
+    </div>
+  </div>
+ 
+  <div class="form-group row">
+    <div class="col-xs-offset-4 col-xs-4">
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html> -->

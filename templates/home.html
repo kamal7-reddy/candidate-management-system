@@ -1,0 +1,84 @@
+﻿{%  extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+ <a><h5>Total Employees:{{ count}}</h5></a>
+    
+
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+
+			<form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+            <button style="position:relative; left:230px;font-size: 18px; background-color:blue; color:white" type="button" onclick="location.href='{% url 'employee' %}'">Add Employees</button>
+		    <button style="position:relative; left:230px;font-size: 18px; background-color:green; color:white" type="button" onclick="location.href='{% url 'export_condidate_list' %}'">Export</button>
+		 
+            </form>
+
+		</div>
+
+
+	</div>
+</div>
+<br>
+
+            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email-id</th>
+        <th>Primary Number</th>
+        <th>Alternate / Whatsapp Number</th>
+        <th>Skills</th>
+        <th>Years of Experience</th>
+        <th>Current CTC</th>
+        <th>Expected CTC</th>
+        <th>Current Company</th>
+        <th>Notice Period</th>
+        <th>Reason for Job Change</th>
+        <th>Status</th>
+        <th>Resume</th>
+        <th>Update</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    {% for dest in dests %}
+    <tbody>
+      <tr>
+        <td>{{dest.job_position}}</td>  
+        <td>{{dest.full_name}}</td>
+        <td>{{dest.gender}}</td>
+        <td>{{dest.email_id}}</td>
+        <td>{{dest.phone_no}}</td>
+        <td>{{dest.alternate_no}}</td>
+        <td>{{dest.skill_set}}</td>
+        <td>{{dest.year_of_exp}}</td>
+        <td>{{dest.current_ctc}}</td>
+        <td>{{dest.expected_ctc}}</td>
+        <td>{{dest.current_company}}</td>
+        <td>{{dest.in_days}}</td>
+        <td>{{dest.reason_for_job_change}}</td>
+        <td>{{dest.status}}</td>
+        <td><a href="{{dest.document.url}}" download ="{{dest.document.url}}" >download</a> </td>
+        <td><a class="btn btn-sm btn-info" href="{% url 'update_condidate_form' dest.id %}">Edit</a></br></br><a class="btn btn-sm btn-danger" href="{% url 'delete_condidate_form' dest.id %}">Delete</a></td>
+        <td><a class="btn btn-sm btn-info" href="{% url 'view_condidate_form' dest.id %}">View</a></td>
+
+
+
+      </tr>
+      
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}​
